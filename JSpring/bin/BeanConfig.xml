@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  <beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"-->
+     		<!--  default-init-method="first"
+          		default-destroy-method="last">-->
+ <beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    
+  <!--    <bean id ="bookstore" class="Myspring.BookStore" init-method="init" destroy-method="destroy">  </bean>-->
+  <!-- <bean id ="bookstore" class="MySpring.BookStore">  </bean>
+<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
+
+<bean id ="bookpublisher" class="MySpring.BookPublisher" init-method="init" destroy-method="destroy">  </bean>
+<bean class="MySpring.BeanPostProcessClass"></bean>  -->
+
+<!--    <bean id="bookbean" class="MySpring.Book" scope="prototype">
+<property name="price" value="2000"></property>
+<property name="bookName" value="One the"></property>
+<property name="authorName" value="Chetan"></property>
+</bean>  -->
+
+ <!--  <bean id="bookpublisherbean" class="MySpring.BookPublisher">
+<property name="book" ref="bookbean"></property>
+</bean>-->
+
+<bean id="bookpublisherbean" class="MySpring.BookPublisher">
+<constructor-arg ref="bookbean"/>
+</bean>
+
+</beans>
